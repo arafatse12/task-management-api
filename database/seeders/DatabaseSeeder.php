@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,12 +15,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(30)->create();
-        $this->command->alert("<comment>(:---------------Users Credentials---------------:)</comment>");
-        foreach (User::all() as $user) {
-            $this->command->info("Email: {$user->username} | Password: 123456");
-        }
-
-        $this->command->alert("<comment>(:-----------------(:Successfully:)-----------------------:)</comment>");
+        $user = User::create(
+            [
+                'name' => 'Md Super Admin',
+                'email' => 'superadmin@gmail.com',
+                'username' => 'superadmin',
+                'status' => 'Active',
+                'email_verified_at' => now(),
+                'password' => bcrypt(123456),
+                'phone' => '0123456789',
+                'address' =>  'Mirpur, Dhaka', 
+                'remember_token' => Str::random(10),
+            ]
+        );
     }
 }

@@ -1,6 +1,6 @@
-# Inventory
-Inventory Managment Software 
-**Manage Inventory Easily.**
+# Task
+Task Managment Software 
+**Manage Task Easily.**
 
 ### Installation
 * First clone this Repo
@@ -8,15 +8,15 @@ Inventory Managment Software
 * Run Composer `composer install`
 * Copy env file `cp .env.example .env`
 * Configure database in .env file
-* Create Database `inventory`
+* Create Database `task_management_api`
 * Configure Your Database Connection  in .env file
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=education
+DB_DATABASE=task_management_api
 DB_USERNAME=root
-DB_PASSWORD=root
+DB_PASSWORD=
 ```
 * Generate laravel key `php artisan key:generate`
 * Run migrate `php artisan migrate`
@@ -53,7 +53,7 @@ Vue Js
 ## Third Part Requirement
 
 ```
-"spatie/laravel-permission": "^5.1"
+"tymon/jwt-auth": "^1.0@dev"
  Kazi Arafat Mia
 ```
 
